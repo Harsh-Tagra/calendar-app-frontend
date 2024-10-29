@@ -2,7 +2,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { FaFacebookF, FaGithub, FaLock, FaTwitter } from 'react-icons/fa6'
-import { FcGoogle } from 'react-icons/fc'
+
 import { GrGoogle } from 'react-icons/gr'
 import { MdOutlineMailOutline } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'

@@ -1,22 +1,16 @@
-import React, { useState } from 'react';
+
 import {
   Card,
   CardContent,
-  CardActions,
+
   Typography,
-  IconButton,
-  Menu,
-  MenuItem,
+
   Button,
 } from '@mui/material';
-import EventForm from './EventForm';
-import axios from 'axios';
+
 
 const EventList = ({handleAddEvent,openForm,eventToEdit,events, handleCloseForm,onEdit, deleteEvent,setRefresh }) => {
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  // Open the form for adding a new event
-
+  
  
   
   return (

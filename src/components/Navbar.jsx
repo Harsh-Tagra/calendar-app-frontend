@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import {  NavLink, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 const Navigate = useNavigate();
