@@ -55,7 +55,7 @@ const Login = () => {
     <div className='grid justify-center  xl:w-[50vw] items-center '>
       
       <div className=' justify-items-center grid items-center'>
-      <img src="http://localhost:3000/avatar.jpg" width="100" height="100" alt='user icon'/>
+      <img src="/avatar.jpg" width="100" height="100" alt='user icon'/>
       <span className='m-2 mb-4 text-gray-500 text-base'>Login below to get started</span>
 <form className='grid justify-between justify-items-center' onSubmit={(e)=>{e.preventDefault(); submit()}}>
  <div  className='relative'>

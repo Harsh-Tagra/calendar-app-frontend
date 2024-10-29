@@ -12,9 +12,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const EventForm = ({ open, handleClose, eventToEdit, setRefresh }) => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [date, setDate] = useState('');
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
+  const [date, setDate] = useState();
   const Navigate = useNavigate()
   useEffect(() => {
     if (eventToEdit) {
@@ -26,13 +26,14 @@ const EventForm = ({ open, handleClose, eventToEdit, setRefresh }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+if(date && title && description ){
     const eventData = {
       title,
       description,
       date: new Date(date).toISOString(),
     token: `${localStorage.getItem('token')}`
     };
+  
 try {
  
   if (eventToEdit) {
@@ -46,12 +47,14 @@ try {
 } catch (error) {
   Navigate('/login')
 }
+
     setRefresh((prev) => !prev); // Refresh the event list
     setTitle("");
     setDescription('');
     setDate("");
  
     handleClose(); // Close the form
+  }
   };
 
   return (
@@ -64,6 +67,7 @@ try {
           label="Title"
           type="text"
           fullWidth
+          required
           variant="outlined"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -73,6 +77,7 @@ try {
           label="Description"
           type="text"
           fullWidth
+          required
           variant="outlined"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -82,6 +87,7 @@ try {
   label="Date and Time"
   type="datetime-local"
   fullWidth
+  required
   variant="outlined"
   value={date}
   onChange={(e) => setDate(e.target.value)}
